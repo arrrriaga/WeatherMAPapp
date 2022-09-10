@@ -46,6 +46,13 @@ export const generateOTHERSChart = (NombreTabla, labels, datos) => {
         },
       },
       scales: {
+        x: {
+          ticks: {
+            font: {
+              size: 20,
+            },
+          },
+        },
         y: {
           beginAtZero: false,
         },

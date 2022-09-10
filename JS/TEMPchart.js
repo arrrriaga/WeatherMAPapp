@@ -46,6 +46,13 @@ export const generateTEMPChart = (NombreTabla, labels, datos) => {
         },
       },
       scales: {
+        x: {
+          ticks: {
+            font: {
+              size: 24,
+            },
+          },
+        },
         y: {
           beginAtZero: false,
         },
