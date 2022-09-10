@@ -35,7 +35,12 @@ export const generateOTHERSChart = (NombreTabla, labels, datos) => {
     options: {
       plugins: {
         legend: {
+          display: true,
           labels: {
+            color: "rgba(100, 100, 100)",
+            font: {
+              size: 18,
+            },
             usePointStyle: true,
           },
         },

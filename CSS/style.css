@@ -8,6 +8,14 @@ body {
   background-color: rgb(58, 58, 114);
 }
 
+h1 {
+  color: #ffb702;
+}
+
+h2,
+p {
+  color: white;
+}
 #map {
   height: 40vh;
 }
