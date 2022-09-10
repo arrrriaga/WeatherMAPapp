@@ -11,14 +11,31 @@
     />
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
-  <body class="container">
-    <header class="row text-center"><h1>Weather MAP app</h1></header>
+  <body class="container-fluid">
+    <!-- <header class="row text-center"><h1>Weather MAP app</h1></header> -->
+    <header class="row text-center">
+      <nav
+        id="header"
+        class="navbar navbar-expand-lg navbar-dark mb-4"
+        style="background-color: rgb(28, 28, 75)"
+      >
+        <div class="container-fluid justify-content-center">
+          <a class="navbar-brand" href="#"
+            ><img id="logoIMG" src="./IMG/LOGO.png" alt=""
+          /></a>
+        </div>
+      </nav>
+    </header>
     <main id="main_container" class="row align-items-center">
-      <section id="map" class="col-10"></section>
-      <form class="col">
+      <section id="map_container" class="col-md-10 col-sm-12">
+        <div id="map"></div>
+      </section>
+      <form id="form" class="col-md-2 col-sm-12 d-flex align-items-center">
         <fieldset disabled class="row">
-          <div class="col-12 form_input m-3">
-            <label for="disabledTextInput" class="row form-label">LAT</label>
+          <div class="col-md-12 col-sm-5 form_input align-items-center">
+            <label class="row form-label text-center align-items-center"
+              >LAT</label
+            >
             <input
               type="text"
               id="coordsLAT"
@@ -26,8 +43,8 @@
               placeholder="Disabled input"
             />
           </div>
-          <div class="col-12 form_input m-3">
-            <label for="disabledTextInput" class="row form-label">LNG</label>
+          <div class="col-md-12 col-sm-5 form_input align-items-center">
+            <label class="row form-label text-center">LNG</label>
             <input
               type="text"
               id="coordsLNG"
@@ -39,10 +56,10 @@
       </form>
     </main>
     <section class="row">
-      <article class="col">
+      <article class="col-lg-6 col-md-12 mt-3 mb-6">
         <canvas id="myTEMPChart"></canvas>
       </article>
-      <article class="col">
+      <article class="col-lg-6 col-md-12 mt-3 mb-3">
         <canvas id="myOTHERSChart"></canvas>
       </article>
     </section>
