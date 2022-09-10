@@ -9,11 +9,15 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
+#main_container {
+  height: 100%;
+}
+
 #map {
-  width: 100%;
-  height: 80%;
+  height: 90vh;
 }
 #coords {
-  width: 500px;
+  width: 50%;
 }

@@ -12,14 +12,27 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body class="container">
-    <main class="container">
-      <label for="">LAT:</label>
-      <input type="text" id="coordsLAT" />
-      <label for="">LNG:</label>
-      <input type="text" id="coordsLNG" />
+    <main id="main_container" class="row align-items-center">
+      <section id="map" class="col-7"></section>
+      <section class="col">
+        <article class="row">
+          <label for="">LAT:</label>
+          <input type="text" id="coordsLAT" />
+          <label for="">LNG:</label>
+          <input type="text" id="coordsLNG" />
+        </article>
+        <article class="row">
+          <canvas id="myChart"></canvas>
+        </article>
+      </section>
     </main>
-    <section id="map"></section>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script
       async
       defer

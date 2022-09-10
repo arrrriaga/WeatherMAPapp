@@ -1,3 +1,6 @@
+import { tablaTEMP } from "./valores.js";
+import { destroyChart } from "./charts.js";
+
 var marker; //variable del marcador
 var coords = {}; //coordenadas obtenidas con la geolocalización
 
@@ -34,6 +37,7 @@ function setMapa(coords) {
     animation: google.maps.Animation.DROP,
     position: new google.maps.LatLng(coords.lat, coords.lng),
   });
+
   //agregamos un evento al marcador junto con la funcion callback al igual que el evento dragend que indica
   //cuando el usuario a soltado el marcador
   marker.addListener("drag", function (event) {
@@ -43,7 +47,13 @@ function setMapa(coords) {
   marker.addListener("dragend", function (event) {
     //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
     marker.setAnimation(null);
-    document.getElementById("coordsLAT").value = this.getPosition().lat();
-    document.getElementById("coordsLNG").value = this.getPosition().lng();
+
+    let coorLAT = this.getPosition().lat();
+    let coorLNG = this.getPosition().lng();
+    coords = coorLAT + "," + coorLNG;
+    document.getElementById("coordsLAT").value = coorLAT;
+    document.getElementById("coordsLNG").value = coorLNG;
+
+    tablaTEMP(coorLAT, coorLNG);
   });
 }
