@@ -11,13 +11,11 @@ body {
   padding: 0;
   align-items: center;
 }
-#main_container {
-  height: 100%;
-}
 
 #map {
-  height: 90vh;
+  height: 40vh;
 }
-#coords {
-  width: 50%;
+
+.form_input {
+  color: white;
 }

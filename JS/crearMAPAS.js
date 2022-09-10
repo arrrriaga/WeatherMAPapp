@@ -1,5 +1,5 @@
 import { tablaTEMP } from "./valores.js";
-import { destroyChart } from "./charts.js";
+import { tablaOTHERS } from "./valores.js";
 
 var marker; //variable del marcador
 var coords = {}; //coordenadas obtenidas con la geolocalización
@@ -14,6 +14,12 @@ export const initMap = function () {
         lat: position.coords.latitude,
       };
       setMapa(coords); //pasamos las coordenadas al metodo para crear el mapa
+      let coorLAT = position.coords.latitude;
+      let coorLNG = position.coords.longitude;
+      document.getElementById("coordsLAT").value = coorLAT;
+      document.getElementById("coordsLNG").value = coorLNG;
+      tablaTEMP(coorLAT, coorLNG);
+      tablaOTHERS(coorLAT, coorLNG);
     },
     function (error) {
       console.log(error);
@@ -55,5 +61,6 @@ function setMapa(coords) {
     document.getElementById("coordsLNG").value = coorLNG;
 
     tablaTEMP(coorLAT, coorLNG);
+    tablaOTHERS(coorLAT, coorLNG);
   });
 }

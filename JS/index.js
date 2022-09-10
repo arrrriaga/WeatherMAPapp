@@ -1,3 +1,3 @@
 import { initMap } from "./crearMAPAS.js";
 
-initMap();
+window.addEventListener("DOMcontentLoaded", initMap());

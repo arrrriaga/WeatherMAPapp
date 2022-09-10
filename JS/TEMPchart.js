@@ -1,10 +1,10 @@
-let myChart;
-export const generateChart = (NombreTabla, labels, datos) => {
-  let ctx = document.getElementById("myChart").getContext("2d");
-  if (myChart) {
-    myChart.destroy();
+let myTEMPChart;
+export const generateTEMPChart = (NombreTabla, labels, datos) => {
+  let ctx = document.getElementById("myTEMPChart").getContext("2d");
+  if (myTEMPChart) {
+    myTEMPChart.destroy();
   }
-  myChart = new Chart(ctx, {
+  myTEMPChart = new Chart(ctx, {
     type: "line",
     data: {
       labels: labels,
@@ -33,6 +33,13 @@ export const generateChart = (NombreTabla, labels, datos) => {
       ],
     },
     options: {
+      plugins: {
+        legend: {
+          labels: {
+            usePointStyle: true,
+          },
+        },
+      },
       scales: {
         y: {
           beginAtZero: false,
@@ -42,6 +49,6 @@ export const generateChart = (NombreTabla, labels, datos) => {
   });
 };
 export const destroyChart = () => {
-  const ctx = document.getElementById("myChart").getContext("2d");
-  myChart.destroy();
+  const ctx = document.getElementById("myTEMPChart").getContext("2d");
+  myTEMPChart.destroy();
 };
