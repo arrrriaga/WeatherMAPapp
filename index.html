@@ -12,7 +12,8 @@
     <link rel="icon" href="./IMG/icono.ico" />
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
-  <body class="container-fluid">
+
+  <body>
     <!-- <header class="row text-center"><h1>Weather MAP app</h1></header> -->
     <header class="row text-center">
       <nav
@@ -27,7 +28,8 @@
         </div>
       </nav>
     </header>
-    <main id="main_container" class="row align-items-center">
+
+    <main id="main_container" class="row justify-content-center">
       <div class="row mb-4">
         <h1 class="text-center">Mapa interactivo</h1>
         <h2 class="text-center">
@@ -38,41 +40,66 @@
           indagar
         </p>
       </div>
-      <section id="map_container" class="col-md-10 col-sm-12">
-        <div id="map"></div>
+
+      <section class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <form id="form" class="row d-flex justify-content-center">
+                <fieldset disabled class="col-6 mb-2">
+                  <div class="row d-flex justify-content-center">
+                    <div class="col form_input align-items-center">
+                      <label
+                        class="row form-label text-center align-items-center"
+                        >LAT</label
+                      >
+                      <input
+                        type="text"
+                        id="coordsLAT"
+                        class="row form-control"
+                        placeholder="Disabled input"
+                      />
+                    </div>
+                    <div class="col form_input align-items-center">
+                      <label class="row form-label text-center">LNG</label>
+                      <input
+                        type="text"
+                        id="coordsLNG"
+                        class="row form-control"
+                        placeholder="Disabled input"
+                      />
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <section id="map_container" class="map-container row">
+            <div id="map"></div>
+          </section>
+        </div>
       </section>
-      <form id="form" class="col-md-2 col-sm-12 d-flex align-items-center">
-        <fieldset disabled class="row">
-          <div class="col-md-12 col-sm-5 form_input align-items-center">
-            <label class="row form-label text-center align-items-center"
-              >LAT</label
-            >
-            <input
-              type="text"
-              id="coordsLAT"
-              class="row form-control"
-              placeholder="Disabled input"
-            />
-          </div>
-          <div class="col-md-12 col-sm-5 form_input align-items-center">
-            <label class="row form-label text-center">LNG</label>
-            <input
-              type="text"
-              id="coordsLNG"
-              class="row form-control"
-              placeholder="Disabled input"
-            />
-          </div>
-        </fieldset>
-      </form>
     </main>
-    <section class="row">
-      <article class="col-lg-6 col-md-12 mt-3 mb-6">
-        <canvas id="myTEMPChart"></canvas>
-      </article>
-      <article class="col-lg-6 col-md-12 mt-3 mb-3">
-        <canvas id="myOTHERSChart"></canvas>
-      </article>
+
+    <section class="container charts d-flex justify-content-center">
+      <div class="row rowcharts">
+        <div class="col xs-12 md-6">
+          <article class="row d-flex justify-content-center">
+            <canvas
+              id="myOTHERSChart"
+              class="col chartTempo d-flex justify-content-center"
+            ></canvas>
+          </article>
+        </div>
+        <div class="col xs-12 md-6">
+          <article class="row d-flex justify-content-center">
+            <canvas
+              id="myTEMPChart"
+              class="col chartTempo d-flex justify-content-center"
+            ></canvas>
+          </article>
+        </div>
+      </div>
     </section>
 
     <script

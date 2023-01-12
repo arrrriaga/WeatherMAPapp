@@ -16,10 +16,22 @@ h2,
 p {
   color: white;
 }
+.map-container {
+  justify-content: center;
+}
 #map {
   height: 40vh;
+  width: 90%;
 }
 
+.charts,
+.rowcharts {
+  height: 30vh;
+}
+.chartTempo {
+  width: 50%;
+  height: 100%;
+}
 .form_input {
   color: white;
 }
